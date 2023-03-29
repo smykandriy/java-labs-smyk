@@ -4,7 +4,7 @@ import lombok.ToString;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-@ToString
+@ToString(callSuper = true)
 public class Helicopter extends AerialVehicle {
     private int id;
     private String model;
@@ -21,6 +21,8 @@ public class Helicopter extends AerialVehicle {
         this.fuelCapacity = 1300;
         this.fuelPerHour = 330;
         this.currentFuel = 770;
+        super.setManufacturer("Mi");
+        super.setWeight(7000);
     }
     private static Helicopter defaultHelicopter = new Helicopter();
 

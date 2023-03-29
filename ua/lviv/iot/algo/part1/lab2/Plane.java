@@ -4,13 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.ToString;
 
 @AllArgsConstructor
-@ToString
+@ToString(callSuper = true)
 public class Plane extends AerialVehicle{
     private int fuelCapacity;
     private int fuelPerHour;
     public Plane() {
         this.fuelCapacity = 48000;
         this.fuelPerHour = 2500;
+        super.setManufacturer("Boeing");
+        super.setWeight(350000);
     }
     @Override
     public int getMaxFlyingDistance() {

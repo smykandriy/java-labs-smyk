@@ -3,8 +3,6 @@ package ua.lviv.iot.algo.part1.lab1;
 import lombok.*;
 
 @ToString
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 public abstract class AerialVehicle {
@@ -13,5 +11,5 @@ public abstract class AerialVehicle {
     private String manufacturer;
     private int maxSpeed;
     public abstract int getMaxFlyingDistance();
-    public abstract double getMaxDeliveryWeight();
+    public abstract double getMaxDeliveryWeight(); // abstract as task said
 }

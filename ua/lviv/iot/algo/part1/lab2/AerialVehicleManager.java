@@ -3,7 +3,6 @@ package ua.lviv.iot.algo.part1.lab1;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,43 +28,32 @@ public class AerialVehicleManager {
                 collect(Collectors.toList());
     }
     public static void main(String[] args) {
-        List<AerialVehicle> aircraftsArray = new ArrayList<>();
-        aircraftsArray.add(new Helicopter());
-        aircraftsArray.add(new Drone());
-        aircraftsArray.add(new Dirigible());
-        aircraftsArray.add(new Plane());
+
+        var aircraftsList = new AerialVehicleManager();
+
+        for (int i = 0; i < 2; i++) {
+            aircraftsList.addAerialVehicle(new Helicopter());
+            aircraftsList.addAerialVehicle(new Drone());
+            aircraftsList.addAerialVehicle(new Dirigible());
+            aircraftsList.addAerialVehicle(new Plane());
+        }
 
         System.out.println("All objects:");
-        for (AerialVehicle aircraft : aircraftsArray) {
+        for (AerialVehicle aircraft : aircraftsList.getAircraftsList()) {
             System.out.println(aircraft);
         }
 
-        var aircraftsList = new AerialVehicleManager();
-        aircraftsList.addAerialVehicles(aircraftsArray);
-        aircraftsList.addAerialVehicles(aircraftsArray);
-
-        aircraftsList.getAircraftsList().get(0).setManufacturer("Mi");
-        aircraftsList.getAircraftsList().get(1).setManufacturer("DeViro");
-        aircraftsList.getAircraftsList().get(2).setManufacturer("Zeppelin");
-        aircraftsList.getAircraftsList().get(3).setManufacturer("Boeing");
-        aircraftsList.getAircraftsList().get(5).setManufacturer("DeViro");
-
         var deviroDrones = aircraftsList.findAllByManufacturer("DeViro");
 
-        System.out.println("The manufacturer of these drones is DeViro:");
+        System.out.println("\nThe manufacturer of these drones is DeViro:");
         for (AerialVehicle drone : deviroDrones) {
             System.out.println(drone);
         }
 
-        aircraftsList.getAircraftsList().get(0).setWeight(7000);
-        aircraftsList.getAircraftsList().get(1).setWeight(5);
-        aircraftsList.getAircraftsList().get(2).setWeight(350000);
-        aircraftsList.getAircraftsList().get(3).setWeight(70000);
-
-        var aircrafts = aircraftsList.findAllHeavierThan(10000);
+        var heavyAircrafts = aircraftsList.findAllHeavierThan(10000);
 
         System.out.println("These objects are heavier than 10000kg:");
-        for (AerialVehicle aircraft : aircrafts) {
+        for (AerialVehicle aircraft : heavyAircrafts) {
             System.out.println(aircraft);
         }
     }

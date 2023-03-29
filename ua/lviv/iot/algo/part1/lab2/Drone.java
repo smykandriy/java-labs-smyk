@@ -4,13 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.ToString;
 
 @AllArgsConstructor
-@ToString
+@ToString(callSuper = true)
 public class Drone extends AerialVehicle{
     private int batteryCapacity;
     private int batteryChargePerMinute;
     public Drone() {
         this.batteryCapacity = 300;
         this.batteryChargePerMinute = 3;
+        super.setManufacturer("DeViro");
+        super.setWeight(5);
     }
     @Override
     public int getMaxFlyingDistance() {
