@@ -1,19 +1,27 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
-@AllArgsConstructor
+
 @ToString(callSuper = true)
+@Getter
+@Setter
+@NoArgsConstructor
 public class Plane extends AerialVehicle{
     private int fuelCapacity;
     private int fuelPerHour;
-    public Plane() {
-        this.fuelCapacity = 48000;
-        this.fuelPerHour = 2500;
-        super.setManufacturer("Boeing");
-        super.setWeight(350000);
+
+    public Plane(double weight, double takeOfWeight,
+                 String manufacturer, int maxSpeed,
+                 int fuelCapacity, int fuelPerHour) {
+        super(weight, takeOfWeight, manufacturer, maxSpeed);
+        this.fuelCapacity = fuelCapacity;
+        this.fuelPerHour = fuelPerHour;
     }
+
     @Override
     public int getMaxFlyingDistance() {
         int flightTime = this.fuelCapacity / this.fuelPerHour;

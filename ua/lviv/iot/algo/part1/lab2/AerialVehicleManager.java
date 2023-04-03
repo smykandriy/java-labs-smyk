@@ -27,15 +27,27 @@ public class AerialVehicleManager {
                 filter(craft -> craft.getManufacturer().equals(manufacturer)).
                 collect(Collectors.toList());
     }
+
     public static void main(String[] args) {
 
         var aircraftsList = new AerialVehicleManager();
 
         for (int i = 0; i < 2; i++) {
-            aircraftsList.addAerialVehicle(new Helicopter());
-            aircraftsList.addAerialVehicle(new Drone());
-            aircraftsList.addAerialVehicle(new Dirigible());
-            aircraftsList.addAerialVehicle(new Plane());
+            aircraftsList.addAerialVehicle(new Helicopter(7000, 13000,
+                    "Mi", 70,
+                    101, "Hip",
+                    2000, 3800,
+                    2000, 200,
+                    800));
+            aircraftsList.addAerialVehicle(new Drone(10, 25,
+                    "DeViro", 70,
+                    300, 3));
+            aircraftsList.addAerialVehicle(new Dirigible(70000, 130000,
+                    "Zeppelin", 200,
+                    13000, 130));
+            aircraftsList.addAerialVehicle(new Plane(90000, 120000,
+                    "Boeing", 460,
+                    35000, 3500));
         }
 
         System.out.println("All objects:");

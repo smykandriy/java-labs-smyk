@@ -5,6 +5,8 @@ import lombok.*;
 @ToString
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class AerialVehicle {
     private double weight;
     private double takeOfWeight;

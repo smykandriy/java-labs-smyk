@@ -1,10 +1,11 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.ToString;
-import lombok.AllArgsConstructor;
+import lombok.*;
 
-@AllArgsConstructor
 @ToString(callSuper = true)
+@Getter
+@Setter
+@NoArgsConstructor
 public class Helicopter extends AerialVehicle {
     private int id;
     private String model;
@@ -13,17 +14,22 @@ public class Helicopter extends AerialVehicle {
     private int fuelCapacity;
     private int fuelPerHour;
     private int currentFuel;
-    public Helicopter() {
-        this.id = 100;
-        this.model = "Hip";
-        this.maxAltitude = 5000;
-        this.currentAltitude = 700;
-        this.fuelCapacity = 1300;
-        this.fuelPerHour = 330;
-        this.currentFuel = 770;
-        super.setManufacturer("Mi");
-        super.setWeight(7000);
+
+    public Helicopter(double weight, double takeOfWeight,
+                      String manufacturer, int maxSpeed,
+                      int id, String model, int currentAltitude,
+                      int maxAltitude, int fuelCapacity,
+                      int fuelPerHour, int currentFuel) {
+        super(weight, takeOfWeight, manufacturer, maxSpeed);
+        this.id = id;
+        this.model = model;
+        this.currentAltitude = currentAltitude;
+        this.maxAltitude = maxAltitude;
+        this.fuelCapacity = fuelCapacity;
+        this.fuelPerHour = fuelPerHour;
+        this.currentFuel = currentFuel;
     }
+
     private static Helicopter defaultHelicopter = new Helicopter();
 
     public static Helicopter getInstance() {
@@ -49,6 +55,7 @@ public class Helicopter extends AerialVehicle {
             this.currentAltitude -= altitude;
         }
     }
+
     public void refuel(int fuel) {
         int fuelToMax = this.fuelCapacity - this.currentFuel;
         if (fuel > fuelToMax) {
@@ -58,11 +65,13 @@ public class Helicopter extends AerialVehicle {
             this.currentFuel += fuel;
         }
     }
+
     @Override
     public int getMaxFlyingDistance() {
         int flightTime = this.fuelCapacity / this.fuelPerHour;
         return this.getMaxSpeed() * flightTime;
     }
+
     @Override
     public double getMaxDeliveryWeight() {
         return this.getTakeOfWeight() - this.getWeight();
