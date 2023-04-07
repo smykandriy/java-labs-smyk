@@ -8,6 +8,7 @@ class PlaneTest {
     private final Plane plane = new Plane(90000, 120000,
             "Boeing", 460,
             35000, 3500);
+    private final Plane plane_null = new Plane();
 
     @Test
     public void testGetMaxFlyingDistance() {

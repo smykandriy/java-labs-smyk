@@ -8,6 +8,7 @@ class DroneTest {
     private final Drone drone = new Drone(10, 25,
             "DeViro", 70,
             300, 3);
+    private final Drone drone_null = new Drone();
 
     @Test
     public void testGetMaxFlyingDistance() {

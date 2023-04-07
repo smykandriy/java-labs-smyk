@@ -9,6 +9,7 @@ class DirigibleTest {
     private final Dirigible dirible = new Dirigible(70000, 100000,
             "Zeppelin", 170,
             13000, 1300);
+    private final Dirigible dirigible_null = new Dirigible();
 
     @Test
     public void testGetMaxFlyingDistance() {

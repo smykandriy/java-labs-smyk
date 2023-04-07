@@ -7,7 +7,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@ToString
 @Getter
 public class AerialVehicleManager {
     private List<AerialVehicle> aircraftsList = new LinkedList<>();

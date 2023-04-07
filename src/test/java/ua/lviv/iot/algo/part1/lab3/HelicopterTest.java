@@ -11,6 +11,7 @@ class HelicopterTest {
             2000, 3800,
             2000, 200,
             800);
+    private final Helicopter helicopter_null = new Helicopter();
 
     @Test
     public void testTakeOff() {
