@@ -1,0 +1,34 @@
+package ua.lviv.iot.algo.part1.lab2;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString(callSuper = true)
+@NoArgsConstructor
+@Getter
+@Setter
+public class Drone extends AerialVehicle{
+    private int batteryCapacity;
+    private int batteryChargePerMinute;
+
+    public Drone(double weight, double takeOfWeight,
+                 String manufacturer, int maxSpeed,
+                 int batteryCapacity, int batteryChargePerMinute) {
+        super(weight, takeOfWeight, manufacturer, maxSpeed);
+        this.batteryCapacity = batteryCapacity;
+        this.batteryChargePerMinute = batteryChargePerMinute;
+    }
+
+    @Override
+    public int getMaxFlyingDistance() {
+        int flightTime = batteryCapacity / batteryChargePerMinute;
+        return this.getMaxSpeed() * flightTime;
+    }
+
+    @Override
+    public double getMaxDeliveryWeight() {
+        return this.getTakeOfWeight() - this.getWeight();
+    }
+}

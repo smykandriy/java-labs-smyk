@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.Getter;
 import lombok.ToString;
@@ -13,9 +13,6 @@ public class AerialVehicleManager {
     private List<AerialVehicle> aircraftsList = new LinkedList<>();
     public void addAerialVehicle(final AerialVehicle aircraft){
         this.aircraftsList.add(aircraft);
-    }
-    public void addAerialVehicles(List<AerialVehicle> aircrafts){
-        this.aircraftsList.addAll(aircrafts);
     }
     public List<AerialVehicle> findAllHeavierThan(int weight) {
         return aircraftsList.stream().
