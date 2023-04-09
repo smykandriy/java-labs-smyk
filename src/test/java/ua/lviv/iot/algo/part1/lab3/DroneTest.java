@@ -1,14 +1,20 @@
 package ua.lviv.iot.algo.part1.lab3;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DroneTest {
-    private final Drone drone = new Drone(10, 25,
-            "DeViro", 70,
-            300, 3);
-    private final Drone drone_null = new Drone();
+    Drone drone;
+    Drone drone_null = new Drone();
+
+    @BeforeEach
+    public void setUp() {
+         drone = new Drone(10, 25,
+                "DeViro", 70,
+                300, 3);
+    }
 
     @Test
     public void testGetMaxFlyingDistance() {

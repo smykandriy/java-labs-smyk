@@ -1,17 +1,23 @@
 package ua.lviv.iot.algo.part1.lab3;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HelicopterTest {
-    private final Helicopter helicopter = new Helicopter(7000, 13000,
-            "Mi", 70,
-            101, "Hip",
-            2000, 3800,
-            2000, 200,
-            800);
-    private final Helicopter helicopter_null = new Helicopter();
+    Helicopter helicopter;
+    Helicopter helicopter_null = new Helicopter();
+
+    @BeforeEach
+    public void setUp() {
+        helicopter = new Helicopter(7000, 13000,
+                "Mi", 70,
+                101, "Hip",
+                2000, 3800,
+                2000, 200,
+                800);
+    }
 
     @Test
     public void testTakeOff() {

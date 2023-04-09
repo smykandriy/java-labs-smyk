@@ -1,26 +1,32 @@
 package ua.lviv.iot.algo.part1.lab3;
 
 import lombok.Getter;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DirigibleTest {
-    private final Dirigible dirible = new Dirigible(70000, 100000,
-            "Zeppelin", 170,
-            13000, 1300);
-    private final Dirigible dirigible_null = new Dirigible();
 
+    Dirigible dirigible;
+    Dirigible dirigible_null = new Dirigible();
+
+    @BeforeEach
+    public void setUp() {
+        dirigible = new Dirigible(70000, 100000,
+                "Zeppelin", 170,
+                13000, 1300);
+    }
     @Test
     public void testGetMaxFlyingDistance() {
-        int flightTime = dirible.getFuelCapacity() / dirible.getFuelPerHour();
-        int maxFlyingDistance = dirible.getMaxSpeed() * flightTime;
-        assertEquals(maxFlyingDistance, dirible.getMaxFlyingDistance());
+        int flightTime = dirigible.getFuelCapacity() / dirigible.getFuelPerHour();
+        int maxFlyingDistance = dirigible.getMaxSpeed() * flightTime;
+        assertEquals(maxFlyingDistance, dirigible.getMaxFlyingDistance());
     }
 
     @Test
     public void testGetMaxDeliveryWeight() {
-        double maxDeliveryWeight = dirible.getTakeOfWeight() - dirible.getWeight();
-        assertEquals(maxDeliveryWeight, dirible.getMaxDeliveryWeight());
+        double maxDeliveryWeight = dirigible.getTakeOfWeight() - dirigible.getWeight();
+        assertEquals(maxDeliveryWeight, dirigible.getMaxDeliveryWeight());
     }
 }

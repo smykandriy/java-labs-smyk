@@ -1,14 +1,21 @@
 package ua.lviv.iot.algo.part1.lab3;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PlaneTest {
-    private final Plane plane = new Plane(90000, 120000,
-            "Boeing", 460,
-            35000, 3500);
-    private final Plane plane_null = new Plane();
+
+    Plane plane;
+    Plane plane_null = new Plane();
+
+    @BeforeEach
+    public void setUp() {
+        plane = new Plane(90000, 120000,
+                "Boeing", 460,
+                35000, 3500);
+    }
 
     @Test
     public void testGetMaxFlyingDistance() {
