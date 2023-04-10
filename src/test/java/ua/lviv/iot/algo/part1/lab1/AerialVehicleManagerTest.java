@@ -41,26 +41,26 @@ class AerialVehicleManagerTest {
     @DisplayName("Testing findAllHeavierThan method")
     void findAllHeavierThan() {
         List<AerialVehicle> heavyAerialVehiclesFromManager = aerialVehicleManager.findAllHeavierThan(50000);
-        List<AerialVehicle> heavyAerialVehicles = new LinkedList<>();
-        heavyAerialVehicles.add(new Dirigible(70000, 130000,
+        List<AerialVehicle> expected = new LinkedList<>();
+        expected.add(new Dirigible(70000, 130000,
                 "Zeppelin", 200,
                 13000, 130));
-        heavyAerialVehicles.add(new Plane(90000, 120000,
+        expected.add(new Plane(90000, 120000,
                 "Boeing", 460,
                 35000, 3500));
         assertFalse(heavyAerialVehiclesFromManager.isEmpty());
-        assertEquals(heavyAerialVehicles.toString(), heavyAerialVehiclesFromManager.toString());
+        assertEquals(expected.toString(), heavyAerialVehiclesFromManager.toString());
     }
 
     @Test
     @DisplayName("Testing findAllByManufacturer method")
     void findAllByManufacturer() {
         List<AerialVehicle> deviroDronesFromManager = aerialVehicleManager.findAllByManufacturer("DeViro");
-        List<AerialVehicle> deviroDrones = new LinkedList<>();
-        deviroDrones.add(new Drone(10, 25,
+        List<AerialVehicle> expected = new LinkedList<>();
+        expected.add(new Drone(10, 25,
                 "DeViro", 70,
                 300, 3));
         assertFalse(deviroDronesFromManager.isEmpty());
-        assertEquals(deviroDrones.toString(), deviroDronesFromManager.toString());
+        assertEquals(expected.toString(), deviroDronesFromManager.toString());
     }
 }

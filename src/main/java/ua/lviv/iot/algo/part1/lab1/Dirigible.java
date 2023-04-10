@@ -11,9 +11,7 @@ public class Dirigible extends AerialVehicle {
     private int fuelCapacity;
     private int fuelPerHour;
 
-    public Dirigible(double weight, double takeOfWeight,
-                     String manufacturer, int maxSpeed,
-                     int fuelCapacity, int fuelPerHour) {
+    public Dirigible(double weight, double takeOfWeight, String manufacturer, int maxSpeed, int fuelCapacity, int fuelPerHour) {
         super(weight, takeOfWeight, manufacturer, maxSpeed);
         this.fuelCapacity = fuelCapacity;
         this.fuelPerHour = fuelPerHour;

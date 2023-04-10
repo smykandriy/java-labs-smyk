@@ -14,6 +14,8 @@ public abstract class AerialVehicle {
     private double takeOfWeight;
     private String manufacturer;
     private int maxSpeed;
+
     public abstract int getMaxFlyingDistance();
+
     public abstract double getMaxDeliveryWeight(); // abstract as task said
 }

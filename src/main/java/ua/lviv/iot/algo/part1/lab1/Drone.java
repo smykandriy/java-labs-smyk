@@ -7,13 +7,11 @@ import lombok.ToString;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @Getter
-public class Drone extends AerialVehicle{
+public class Drone extends AerialVehicle {
     private int batteryCapacity;
     private int batteryChargePerMinute;
 
-    public Drone(double weight, double takeOfWeight,
-                 String manufacturer, int maxSpeed,
-                 int batteryCapacity, int batteryChargePerMinute) {
+    public Drone(double weight, double takeOfWeight, String manufacturer, int maxSpeed, int batteryCapacity, int batteryChargePerMinute) {
         super(weight, takeOfWeight, manufacturer, maxSpeed);
         this.batteryCapacity = batteryCapacity;
         this.batteryChargePerMinute = batteryChargePerMinute;

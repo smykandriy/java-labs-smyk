@@ -16,11 +16,7 @@ public class Helicopter extends AerialVehicle {
     private int fuelPerHour;
     private int currentFuel;
 
-    public Helicopter(double weight, double takeOfWeight,
-                      String manufacturer, int maxSpeed,
-                      int id, String model, int currentAltitude,
-                      int maxAltitude, int fuelCapacity,
-                      int fuelPerHour, int currentFuel) {
+    public Helicopter(double weight, double takeOfWeight, String manufacturer, int maxSpeed, int id, String model, int currentAltitude, int maxAltitude, int fuelCapacity, int fuelPerHour, int currentFuel) {
         super(weight, takeOfWeight, manufacturer, maxSpeed);
         this.id = id;
         this.model = model;

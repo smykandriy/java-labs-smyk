@@ -15,14 +15,10 @@ public class AerialVehicleManager {
     }
 
     public List<AerialVehicle> findAllHeavierThan(int weight) {
-        return aircraftsList.stream().
-                filter(craft -> craft.getWeight() > weight).
-                collect(Collectors.toList());
+        return aircraftsList.stream().filter(craft -> craft.getWeight() > weight).collect(Collectors.toList());
     }
 
     public List<AerialVehicle> findAllByManufacturer(String manufacturer) {
-        return aircraftsList.stream().
-                filter(craft -> craft.getManufacturer().equals(manufacturer)).
-                collect(Collectors.toList());
+        return aircraftsList.stream().filter(craft -> craft.getManufacturer().equals(manufacturer)).collect(Collectors.toList());
     }
 }
