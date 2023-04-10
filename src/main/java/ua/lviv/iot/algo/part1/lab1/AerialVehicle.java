@@ -1,10 +1,12 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.AllArgsConstructor;
 
 @ToString
 @Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class AerialVehicle {
