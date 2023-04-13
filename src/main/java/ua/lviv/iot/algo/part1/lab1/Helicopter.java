@@ -1,10 +1,11 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @ToString(callSuper = true)
 @Getter
-@Setter
 @NoArgsConstructor
 public class Helicopter extends AerialVehicle {
     private int id;
@@ -15,11 +16,7 @@ public class Helicopter extends AerialVehicle {
     private int fuelPerHour;
     private int currentFuel;
 
-    public Helicopter(double weight, double takeOfWeight,
-                      String manufacturer, int maxSpeed,
-                      int id, String model, int currentAltitude,
-                      int maxAltitude, int fuelCapacity,
-                      int fuelPerHour, int currentFuel) {
+    public Helicopter(double weight, double takeOfWeight, String manufacturer, int maxSpeed, int id, String model, int currentAltitude, int maxAltitude, int fuelCapacity, int fuelPerHour, int currentFuel) {
         super(weight, takeOfWeight, manufacturer, maxSpeed);
         this.id = id;
         this.model = model;
@@ -28,12 +25,6 @@ public class Helicopter extends AerialVehicle {
         this.fuelCapacity = fuelCapacity;
         this.fuelPerHour = fuelPerHour;
         this.currentFuel = currentFuel;
-    }
-
-    private static Helicopter defaultHelicopter = new Helicopter();
-
-    public static Helicopter getInstance() {
-        return defaultHelicopter;
     }
 
     public void takeOff() {

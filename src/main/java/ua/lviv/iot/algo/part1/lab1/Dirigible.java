@@ -1,18 +1,17 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @ToString(callSuper = true)
-@Setter
 @Getter
 @NoArgsConstructor
 public class Dirigible extends AerialVehicle {
     private int fuelCapacity;
     private int fuelPerHour;
 
-    public Dirigible(double weight, double takeOfWeight,
-                     String manufacturer, int maxSpeed,
-                     int fuelCapacity, int fuelPerHour) {
+    public Dirigible(double weight, double takeOfWeight, String manufacturer, int maxSpeed, int fuelCapacity, int fuelPerHour) {
         super(weight, takeOfWeight, manufacturer, maxSpeed);
         this.fuelCapacity = fuelCapacity;
         this.fuelPerHour = fuelPerHour;
