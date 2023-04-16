@@ -5,5 +5,8 @@
 
 <suppressions>
     <suppress checks="Indentation" files=".*" />
+    <suppress checks="LineLength" files=".*" />
+    <suppress checks="MissingJavadocMethod" files=".*" />
+    <suppress checks="MissingJavadocType" files=".*" />
     <suppress checks="CustomImportOrder" files=".*" />
 </suppressions>
