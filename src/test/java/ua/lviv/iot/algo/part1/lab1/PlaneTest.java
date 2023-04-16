@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PlaneTest {
 
     Plane plane;
-    Plane plane_null = new Plane();
+    Plane planeNull = new Plane();
 
     @BeforeEach
     public void setUp() {

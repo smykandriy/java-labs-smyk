@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DroneTest {
     Drone drone;
-    Drone drone_null = new Drone();
+    Drone droneNull = new Drone();
 
     @BeforeEach
     public void setUp() {

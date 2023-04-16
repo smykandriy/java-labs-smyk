@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HelicopterTest {
     Helicopter helicopter;
-    Helicopter helicopter_null = new Helicopter();
+    Helicopter helicopterNull = new Helicopter();
 
     @BeforeEach
     public void setUp() {
