@@ -11,10 +11,22 @@ public class Drone extends AerialVehicle {
     private int batteryCapacity;
     private int batteryChargePerMinute;
 
-    public Drone(double weight, double takeOfWeight, String manufacturer, int maxSpeed, int batteryCapacity, int batteryChargePerMinute) {
+    public Drone(double weight, double takeOfWeight,
+                 String manufacturer, int maxSpeed,
+                 int batteryCapacity, int batteryChargePerMinute) {
         super(weight, takeOfWeight, manufacturer, maxSpeed);
         this.batteryCapacity = batteryCapacity;
         this.batteryChargePerMinute = batteryChargePerMinute;
+    }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + ", batteryCapacity, batteryChargePerMinute";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ", " + batteryCapacity + ", " + batteryChargePerMinute;
     }
 
     @Override

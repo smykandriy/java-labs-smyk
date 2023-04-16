@@ -15,6 +15,14 @@ public abstract class AerialVehicle {
     private String manufacturer;
     private int maxSpeed;
 
+    public String getHeaders() {
+        return "weight, takeOfWeight, manufacturer, maxSpeed";
+    }
+
+    public String toCSV() {
+        return weight + ", " + takeOfWeight + ", " + manufacturer + ", " + maxSpeed;
+    }
+
     public abstract int getMaxFlyingDistance();
 
     public abstract double getMaxDeliveryWeight(); // abstract as task said
