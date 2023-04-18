@@ -14,6 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class WriterTest {
+
+    private static final String ACTUAL_FILE = "src\\main\\java\\resources\\aircrafts.csv";
+    private static final String ACTUAL_SORTED_FILE = "src\\main\\java\\resources\\aircrafts-sorted.csv";
     private static final String EXPECTED_FILE = "src\\test\\java\\resources\\expected-aircrafts.csv";
     private static final String EXPECTED_SORTED_FILE = "src\\test\\java\\resources\\expected-aircrafts-sorted.csv";
 
@@ -44,9 +47,9 @@ class WriterTest {
     }
 
     @Test
-    public void testWriteNull() throws IOException {
+    public void testWriteNull() {
         writer.writeToFile(null);
-        File result = new File("src\\main\\java\\resources\\aircrafts.csv");
+        File result = new File(ACTUAL_FILE);
         assertFalse(result.exists());
     }
 
@@ -55,14 +58,14 @@ class WriterTest {
         writer.writeToFile(aircrafts.getAircraftsList());
 
         Path expected = new File(EXPECTED_FILE).toPath();
-        Path actual = new File("src//main//java//resources//aircrafts.csv").toPath();
+        Path actual = new File(ACTUAL_FILE).toPath();
 
         assertEquals(-1L, Files.mismatch(expected, actual));
     }
 
     @Test
     public void testRewriteToFile() throws IOException {
-        try (FileWriter fileWriter = new FileWriter("src//main//java//resources//aircrafts.csv")) {
+        try (FileWriter fileWriter = new FileWriter(ACTUAL_FILE)) {
             fileWriter.write("rewriting...");
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,7 +76,7 @@ class WriterTest {
     @Test
     public void testSortedWriteNull() {
         writer.sortedWriteToFile(null);
-        File result = new File("src//main//java//resources//aircrafts-sorted.csv");
+        File result = new File(ACTUAL_SORTED_FILE);
         assertFalse(result.exists());
     }
 
@@ -82,14 +85,14 @@ class WriterTest {
         writer.sortedWriteToFile(aircrafts.getAircraftsList());
 
         Path expected = new File(EXPECTED_SORTED_FILE).toPath();
-        Path actual = new File("src//main//java//resources//aircrafts-sorted.csv").toPath();
+        Path actual = new File(ACTUAL_SORTED_FILE).toPath();
 
         assertEquals(-1L, Files.mismatch(expected, actual));
     }
 
     @Test
     public void testSortedRewriteToFile() throws IOException {
-        try (FileWriter fileWriter = new FileWriter("src//main//java//resources//aircrafts-sorted.csv")) {
+        try (FileWriter fileWriter = new FileWriter(ACTUAL_SORTED_FILE)) {
             fileWriter.write("rewriting (sorted)...");
         } catch (IOException e) {
             e.printStackTrace();
@@ -99,7 +102,7 @@ class WriterTest {
 
     @AfterEach
     void tearDown() throws IOException {
-        Files.deleteIfExists(Path.of("src\\main\\java\\resources\\aircrafts.csv"));
-        Files.deleteIfExists(Path.of("src\\main\\java\\resources\\aircrafts-sorted.csv"));
+        Files.deleteIfExists(Path.of(ACTUAL_FILE));
+        Files.deleteIfExists(Path.of(ACTUAL_SORTED_FILE));
     }
 }
