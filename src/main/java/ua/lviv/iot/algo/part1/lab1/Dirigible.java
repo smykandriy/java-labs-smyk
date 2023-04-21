@@ -10,6 +10,7 @@ import lombok.ToString;
 public class Dirigible extends AerialVehicle {
     private int fuelCapacity;
     private int fuelPerHour;
+    public final static String HEADERS = ", fuelCapacity, fuelPerHour";
 
     public Dirigible(double weight, double takeOfWeight,
                      String manufacturer, int maxSpeed,
@@ -21,7 +22,7 @@ public class Dirigible extends AerialVehicle {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + ", fuelCapacity, fuelPerHour";
+        return super.getHeaders() + HEADERS;
     }
 
     @Override

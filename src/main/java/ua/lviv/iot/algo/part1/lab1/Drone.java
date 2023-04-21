@@ -10,6 +10,7 @@ import lombok.ToString;
 public class Drone extends AerialVehicle {
     private int batteryCapacity;
     private int batteryChargePerMinute;
+    public final static String HEADERS = ", batteryCapacity, batteryChargePerMinute";
 
     public Drone(double weight, double takeOfWeight,
                  String manufacturer, int maxSpeed,
@@ -21,7 +22,7 @@ public class Drone extends AerialVehicle {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + ", batteryCapacity, batteryChargePerMinute";
+        return super.getHeaders() + HEADERS;
     }
 
     @Override

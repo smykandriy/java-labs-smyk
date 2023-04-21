@@ -14,9 +14,10 @@ public abstract class AerialVehicle {
     private double takeOfWeight;
     private String manufacturer;
     private int maxSpeed;
+    public final static String HEADERS = "weight, takeOfWeight, manufacturer, maxSpeed";
 
     public String getHeaders() {
-        return "weight, takeOfWeight, manufacturer, maxSpeed";
+        return HEADERS;
     }
 
     public String toCSV() {

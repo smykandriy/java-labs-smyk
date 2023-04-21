@@ -15,6 +15,7 @@ public class Helicopter extends AerialVehicle {
     private int fuelCapacity;
     private int fuelPerHour;
     private int currentFuel;
+    public final static String HEADERS = ", id, model, currentAltitude, maxAltitude, fuelCapacity, fuelPerHour, currentFuel";
 
     public Helicopter(double weight, double takeOfWeight,
                       String manufacturer, int maxSpeed,
@@ -63,7 +64,7 @@ public class Helicopter extends AerialVehicle {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + ", id, model, currentAltitude, maxAltitude, fuelCapacity, fuelPerHour, currentFuel";
+        return super.getHeaders() + HEADERS;
     }
 
     @Override

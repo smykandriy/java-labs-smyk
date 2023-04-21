@@ -11,6 +11,7 @@ import lombok.ToString;
 public class Plane extends AerialVehicle {
     private int fuelCapacity;
     private int fuelPerHour;
+    public final static String HEADERS = ", fuelCapacity, fuelPerHour";
 
     public Plane(double weight, double takeOfWeight,
                  String manufacturer, int maxSpeed,
@@ -22,7 +23,7 @@ public class Plane extends AerialVehicle {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + ", fuelCapacity, fuelPerHour";
+        return super.getHeaders() + HEADERS;
     }
 
     @Override
