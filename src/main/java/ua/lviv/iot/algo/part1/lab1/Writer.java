@@ -3,9 +3,8 @@ package ua.lviv.iot.algo.part1.lab1;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Writer {
 
@@ -40,31 +39,21 @@ public class Writer {
 
     public void sortedWriteToFile(List<AerialVehicle> aircrafts) {
         if (!(aircrafts == null || aircrafts.isEmpty())) {
-
-            List<Class<? extends AerialVehicle>> aircraftsType = aircrafts.stream()
-                    .map(AerialVehicle::getClass)
-                    .distinct()
-                    .collect(Collectors.toList());
-
+            aircrafts.sort(Comparator.comparing(airctaft -> airctaft.getClass().getSimpleName()));
             try (FileWriter writer = new FileWriter(ACTUAL_SORTED_FILE)) {
-                for (var aircraftType : aircraftsType) {
-                    writer.write(aircraftType.getSimpleName() + "\n");
-                    writer.write(String.valueOf(aircraftType.getDeclaredMethod("getHeaders")
-                            .invoke(aircraftType.getDeclaredConstructor().newInstance())));
-                    writer.write("\n");
+                var aircraftType = aircrafts.get(0).getClass().getSimpleName();
+                writer.write(aircraftType + "\n");
+                writer.write(aircrafts.get(0).getHeaders() + "\n");
 
-                    for (var aircraft : aircrafts) {
-                        if (aircraftType == aircraft.getClass()) {
-                            writer.write(aircraft.toCSV() + "\n");
-                        }
+                for (var aircraft : aircrafts) {
+                    if (!aircraft.getClass().getSimpleName().equals(aircraftType)) {
+                        aircraftType = aircraft.getClass().getSimpleName();
+                        writer.write("\n" + aircraftType + "\n");
+                        writer.write(aircraft.getHeaders() + "\n");
                     }
-                    writer.write("\n");
+                    writer.write(aircraft.toCSV() + "\n");
                 }
-            } catch (IOException
-                     | NoSuchMethodException
-                     | InvocationTargetException
-                     | IllegalAccessException
-                     | InstantiationException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
