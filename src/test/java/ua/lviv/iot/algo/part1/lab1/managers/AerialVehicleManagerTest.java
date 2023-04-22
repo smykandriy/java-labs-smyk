@@ -1,8 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.managers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab1.managers.AerialVehicleManager;
+import ua.lviv.iot.algo.part1.lab1.models.*;
 
 import java.util.LinkedList;
 import java.util.List;

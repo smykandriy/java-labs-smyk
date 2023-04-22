@@ -1,20 +1,21 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+
 @ToString(callSuper = true)
 @Getter
 @NoArgsConstructor
-public class Dirigible extends AerialVehicle {
+public class Plane extends AerialVehicle {
     private int fuelCapacity;
     private int fuelPerHour;
     public final static String HEADERS = ", fuelCapacity, fuelPerHour";
 
-    public Dirigible(double weight, double takeOfWeight,
-                     String manufacturer, int maxSpeed,
-                     int fuelCapacity, int fuelPerHour) {
+    public Plane(double weight, double takeOfWeight,
+                 String manufacturer, int maxSpeed,
+                 int fuelCapacity, int fuelPerHour) {
         super(weight, takeOfWeight, manufacturer, maxSpeed);
         this.fuelCapacity = fuelCapacity;
         this.fuelPerHour = fuelPerHour;
@@ -41,4 +42,3 @@ public class Dirigible extends AerialVehicle {
         return this.getTakeOfWeight() - this.getWeight();
     }
 }
-

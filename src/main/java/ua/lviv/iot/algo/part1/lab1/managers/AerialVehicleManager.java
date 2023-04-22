@@ -1,6 +1,7 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.managers;
 
 import lombok.Getter;
+import ua.lviv.iot.algo.part1.lab1.models.AerialVehicle;
 
 import java.util.LinkedList;
 import java.util.List;

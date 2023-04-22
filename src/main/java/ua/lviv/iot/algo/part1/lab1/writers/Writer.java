@@ -1,4 +1,6 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.writers;
+
+import ua.lviv.iot.algo.part1.lab1.models.AerialVehicle;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -1,8 +1,14 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.writers;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab1.managers.AerialVehicleManager;
+import ua.lviv.iot.algo.part1.lab1.models.Dirigible;
+import ua.lviv.iot.algo.part1.lab1.models.Drone;
+import ua.lviv.iot.algo.part1.lab1.models.Helicopter;
+import ua.lviv.iot.algo.part1.lab1.models.Plane;
+import ua.lviv.iot.algo.part1.lab1.writers.Writer;
 
 import java.io.File;
 import java.io.FileWriter;
