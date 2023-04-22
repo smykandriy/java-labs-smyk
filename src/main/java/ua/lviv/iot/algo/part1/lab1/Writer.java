@@ -8,34 +8,8 @@ import java.util.List;
 
 public class Writer {
 
-    public static final String ACTUAL_FILE =
-            "src" + File.separator
-            + "main" + File.separator
-            + "java" + File.separator
-            + "resources" + File.separator
-            + "aircrafts.csv";
-    public static final String ACTUAL_SORTED_FILE =
-            "src" + File.separator
-            + "main" + File.separator
-            + "java" + File.separator
-            + "resources" + File.separator
+    public static final String ACTUAL_SORTED_FILE = "src" + File.separator + "main" + File.separator + "java" + File.separator + "resources" + File.separator
             + "aircrafts-sorted.csv";
-
-    public void writeToFile(List<AerialVehicle> aircrafts) {
-        if (!(aircrafts == null || aircrafts.isEmpty())) {
-            try (FileWriter writer = new FileWriter(ACTUAL_FILE)) {
-                for (var aircraft : aircrafts) {
-                    writer.write(aircraft.getClass().getSimpleName() + "\n");
-                    writer.write(aircraft.getHeaders());
-                    writer.write(" \r\n");
-                    writer.write(aircraft.toCSV());
-                    writer.write(" \r\n\n");
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     public void sortedWriteToFile(List<AerialVehicle> aircrafts) {
         if (!(aircrafts == null || aircrafts.isEmpty())) {
