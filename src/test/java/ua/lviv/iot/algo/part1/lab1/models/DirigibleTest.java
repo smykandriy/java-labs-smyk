@@ -1,14 +1,15 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab1.models.Dirigible;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DirigibleTest {
 
     Dirigible dirigible;
-    Dirigible dirigible_null = new Dirigible();
+    Dirigible dirigibleNull = new Dirigible();
 
     @BeforeEach
     public void setUp() {
@@ -16,6 +17,7 @@ class DirigibleTest {
                 "Zeppelin", 170,
                 13000, 1300);
     }
+
     @Test
     public void testGetMaxFlyingDistance() {
         int flightTime = dirigible.getFuelCapacity() / dirigible.getFuelPerHour();

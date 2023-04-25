@@ -1,13 +1,14 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab1.models.Drone;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DroneTest {
     Drone drone;
-    Drone drone_null = new Drone();
+    Drone droneNull = new Drone();
 
     @BeforeEach
     public void setUp() {

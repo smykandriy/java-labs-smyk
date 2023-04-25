@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,11 +11,24 @@ import lombok.ToString;
 public class Plane extends AerialVehicle {
     private int fuelCapacity;
     private int fuelPerHour;
+    public final static String HEADERS = ", fuelCapacity, fuelPerHour";
 
-    public Plane(double weight, double takeOfWeight, String manufacturer, int maxSpeed, int fuelCapacity, int fuelPerHour) {
+    public Plane(double weight, double takeOfWeight,
+                 String manufacturer, int maxSpeed,
+                 int fuelCapacity, int fuelPerHour) {
         super(weight, takeOfWeight, manufacturer, maxSpeed);
         this.fuelCapacity = fuelCapacity;
         this.fuelPerHour = fuelPerHour;
+    }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + HEADERS;
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ", " + fuelCapacity + ", " + fuelPerHour;
     }
 
     @Override

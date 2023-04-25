@@ -1,6 +1,7 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.managers;
 
 import lombok.Getter;
+import ua.lviv.iot.algo.part1.lab1.models.AerialVehicle;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -15,10 +16,14 @@ public class AerialVehicleManager {
     }
 
     public List<AerialVehicle> findAllHeavierThan(int weight) {
-        return aircraftsList.stream().filter(craft -> craft.getWeight() > weight).collect(Collectors.toList());
+        return aircraftsList.stream()
+                .filter(craft -> craft.getWeight() > weight)
+                .collect(Collectors.toList());
     }
 
     public List<AerialVehicle> findAllByManufacturer(String manufacturer) {
-        return aircraftsList.stream().filter(craft -> craft.getManufacturer().equals(manufacturer)).collect(Collectors.toList());
+        return aircraftsList.stream()
+                .filter(craft -> craft.getManufacturer().equals(manufacturer))
+                .collect(Collectors.toList());
     }
 }

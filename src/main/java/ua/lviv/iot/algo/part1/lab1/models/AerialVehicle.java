@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.lab1.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,6 +14,15 @@ public abstract class AerialVehicle {
     private double takeOfWeight;
     private String manufacturer;
     private int maxSpeed;
+    public final static String HEADERS = "weight, takeOfWeight, manufacturer, maxSpeed";
+
+    public String getHeaders() {
+        return HEADERS;
+    }
+
+    public String toCSV() {
+        return weight + ", " + takeOfWeight + ", " + manufacturer + ", " + maxSpeed;
+    }
 
     public abstract int getMaxFlyingDistance();
 
